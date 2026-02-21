@@ -1,0 +1,132 @@
+/* --- CSS Variables for Colors --- */
+:root {
+    --primary-red: #BC002D; /* Japanese Flag Red */
+    --soft-grey: #F0F2F5;
+    --text-dark: #333333;
+    --white: #ffffff;
+    --correct-green: #4CAF50;
+    --wrong-red: #e74c3c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--soft-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* --- Layout Containers --- */
+.app-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-red);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* --- Quiz Card --- */
+.quiz-card, .result-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary-red); /* Japanese touch */
+}
+
+/* --- Question & Info --- */
+.quiz-info {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+#question-container {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    min-height: 60px;
+}
+
+/* --- Buttons --- */
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: var(--white);
+    border: 2px solid var(--soft-grey);
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /* Animation: Scale slightly on click */
+}
+
+.btn:hover:not([disabled]) {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+    background-color: #fff5f5;
+}
+
+.btn:active:not([disabled]) {
+    transform: scale(0.98); /* Click animation */
+}
+
+/* Button States */
+.btn.correct {
+    background-color: var(--correct-green);
+    color: white;
+    border-color: var(--correct-green);
+}
+
+.btn.wrong {
+    background-color: var(--wrong-red);
+    color: white;
+    border-color: var(--wrong-red);
+}
+
+/* Next & Restart Buttons */
+.next-btn, .restart-btn {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.next-btn:hover, .restart-btn:hover {
+    background-color: #a00025;
+}
+
+/* Utility Classes */
+.hide {
+    display: none;
+}
